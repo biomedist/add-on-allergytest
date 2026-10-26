@@ -38,58 +38,6 @@ python app.py
 
 **참고**: 컬럼명이 "환자명", "이름", "등록번호", "번호" 등을 포함하면 자동으로 인식합니다.
 
-## 중요 사항
-
-### 좌표 설정 필요
-
-`app.py` 파일의 `automate_registration()` 함수에서 다음 좌표들을 실제 화면 좌표로 변경해야 합니다:
-
-1. **등록번호 입력창 좌표** (line ~60):
-   ```python
-   registration_input_x = 500
-   registration_input_y = 300
-   ```
-
-2. **날짜 좌표 리스트** (line ~80):
-   ```python
-   date_coords = [
-       (x, y, 'YYYY-MM-DD'),  # 실제 날짜 좌표와 날짜 문자열로 변경
-       ...
-   ]
-   ```
-
-3. **Action 버튼 좌표** (line ~100):
-   ```python
-   action_button_x = 600
-   action_button_y = 500
-   ```
-
-4. **채혈접수 버튼 좌표** (line ~110):
-   ```python
-   blood_test_x = 650
-   blood_test_y = 550
-   ```
-
-### 좌표 확인 방법
-
-1. PyAutoGUI의 `pyautogui.position()` 함수를 사용하여 마우스 위치 확인
-2. 또는 `pyautogui.displayMousePosition()` 실행하여 실시간 좌표 확인
-
-### 날짜 좌표 설정
-
-날짜 좌표는 다음 형식으로 설정해야 합니다:
-```python
-date_coords = [
-    (x1, y1, '2026-02-16'),  # 3일 전
-    (x2, y2, '2026-02-17'),  # 2일 전
-    (x3, y3, '2026-02-18'),  # 1일 전
-    (x4, y4, '2026-02-19'),  # 오늘
-    (x5, y5, '2026-02-20'),  # 1일 후
-    (x6, y6, '2026-02-21'),  # 2일 후
-    (x7, y7, '2026-02-22'),  # 3일 후
-]
-```
-
 ## 기능
 
 ### 개별 입력
